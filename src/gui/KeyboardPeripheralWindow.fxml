@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="RootNode" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.KeyboardScreenController">
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Controller">
+               <font>
+                  <Font name="Courier New Bold" size="20.0" />
+               </font>
+            </Label>
+            <Pane layoutX="10.0" layoutY="45.0" prefHeight="60.0" prefWidth="280.0" style="-fx-border-color: black; -fx-background-color: #EBEBEB;">
+               <children>
+                  <Label layoutX="7.0" layoutY="6.0" text="STATUS">
+                     <font>
+                        <Font name="Courier New Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="217.0" layoutY="4.0" text="0xFF10">
+                     <font>
+                        <Font name="Courier New Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="StatusBitName" layoutX="83.0" layoutY="6.0" text="Bit_Name" visible="false">
+                     <font>
+                        <Font name="Courier New" size="15.0" />
+                     </font>
+                  </Label>
+                  <HBox fx:id="StatusHBOX" layoutY="31.0" prefHeight="30.0" prefWidth="280.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="10.0" layoutY="125.0" prefHeight="60.0" prefWidth="280.0" style="-fx-border-color: black; -fx-background-color: #EBEBEB;">
+               <children>
+                  <Label layoutX="7.0" layoutY="6.0" text="CONTROL">
+                     <font>
+                        <Font name="Courier New Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="217.0" layoutY="4.0" text="0xFF12">
+                     <font>
+                        <Font name="Courier New Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ControlBitName" layoutX="85.0" layoutY="6.0" text="Bit_Name" visible="false">
+                     <font>
+                        <Font name="Courier New" size="15.0" />
+                     </font>
+                  </Label>
+                  <HBox fx:id="ControlHBOX" layoutY="31.0" prefHeight="30.0" prefWidth="280.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="10.0" layoutY="196.0" prefHeight="90.0" prefWidth="280.0" style="-fx-border-color: black; -fx-background-color: #EBEBEB;">
+               <children>
+                  <Label layoutX="7.0" layoutY="6.0" text="DATA">
+                     <font>
+                        <Font name="Courier New Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="217.0" layoutY="4.0" text="0xFF14">
+                     <font>
+                        <Font name="Courier New Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <HBox fx:id="DataHBOX1" layoutY="31.0" prefHeight="30.0" prefWidth="280.0" />
+                  <HBox fx:id="DataHBOX2" layoutY="61.0" prefHeight="30.0" prefWidth="280.0" />
+               </children>
+            </Pane>
+            <Pane layoutX="10.0" layoutY="294.0" prefHeight="60.0" prefWidth="280.0" style="-fx-border-color: black; -fx-background-color: #EBEBEB;">
+               <children>
+                  <Label layoutX="7.0" layoutY="6.0" text="CNTDATA">
+                     <font>
+                        <Font name="Courier New Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="217.0" layoutY="4.0" text="0xFF16">
+                     <font>
+                        <Font name="Courier New Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="CntDataBitName" layoutX="86.0" layoutY="6.0" text="Bit_Name" visible="false">
+                     <font>
+                        <Font name="Courier New" size="15.0" />
+                     </font>
+                  </Label>
+                  <HBox fx:id="CntDataHBOX" layoutY="31.0" prefHeight="30.0" prefWidth="280.0" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="98.0" layoutY="14.0" prefHeight="30.0" prefWidth="186.0" text="Keyboard Buffer">
+               <font>
+                  <Font name="Courier New Bold" size="20.0" />
+               </font></Label>
+            <Label layoutX="27.0" layoutY="139.0" text="Buffer:">
+               <font>
+                  <Font name="Courier New Bold" size="15.0" />
+               </font></Label>
+            <ToggleButton fx:id="KeyboardToggleBtn" layoutX="95.0" layoutY="94.0" mnemonicParsing="false" text="Start/Stop">
+               <font>
+                  <Font name="Courier New Bold" size="15.0" />
+               </font></ToggleButton>
+            <Label layoutX="16.0" layoutY="44.0" prefHeight="44.0" prefWidth="269.0" text="Press this button to start/stop the Input Sequence" wrapText="true">
+               <font>
+                  <Font name="Courier New" size="15.0" />
+               </font></Label>
+            <ScrollPane hbarPolicy="NEVER" layoutX="98.0" layoutY="139.0" prefHeight="143.0" prefWidth="109.0">
+               <content>
+                  <VBox fx:id="BufferVBOX" prefWidth="106.0" />
+               </content>
+            </ScrollPane>
+            <AnchorPane fx:id="WorkingPane" layoutX="14.0" layoutY="295.0" prefHeight="54.0" prefWidth="200.0">
+               <children>
+                  <ProgressIndicator fx:id="KeyboardProgressBar" layoutX="3.0" layoutY="14.0" prefHeight="28.0" prefWidth="22.0" />
+                  <Label layoutX="32.0" layoutY="18.0" prefHeight="21.0" prefWidth="92.0" text="Working...">
+                     <font>
+                        <Font name="Courier New Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
